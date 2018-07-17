@@ -6,29 +6,23 @@
  */
 
 #import "AppDelegate.h"
+#import "ReactNativeViewController.h"
+#import "ReactNativeHelper.h"
 
-#import <React/RCTBundleURLProvider.h>
-#import <React/RCTRootView.h>
+@interface AppDelegate ()
+
+@end
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-  NSURL *jsCodeLocation;
 
-  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                      moduleName:@"RNLazyBundleLoading"
-                                               initialProperties:nil
-                                                   launchOptions:launchOptions];
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
-
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  // Override point for customization after application launch.
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  ReactNativeViewController *vc = [[ReactNativeViewController alloc] initWithScreenName:@"ScreenA"];
+  self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
   [self.window makeKeyAndVisible];
+  [ReactNativeHelper createBridge];
   return YES;
 }
 

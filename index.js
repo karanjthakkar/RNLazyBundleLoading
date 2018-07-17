@@ -1,7 +1,8 @@
 /** @format */
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+import { AppRegistry } from 'react-native';
+import ScreenA from './ScreenA';
+import ScreenB from './ScreenB';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent('ScreenA', () => ScreenA);
+AppRegistry.registerComponent('ScreenB', () => ScreenB);

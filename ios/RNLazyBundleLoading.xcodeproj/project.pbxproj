@@ -38,6 +38,9 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		BA13144220FE86C80062868B /* NavigationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13144120FE86C80062868B /* NavigationBridge.m */; };
+		BA13146A20FE87E70062868B /* ReactNativeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13146920FE87E70062868B /* ReactNativeHelper.m */; };
+		BA13146D20FE885E0062868B /* ReactNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13146C20FE885E0062868B /* ReactNativeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +346,12 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		BA13144020FE86C80062868B /* NavigationBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBridge.h; sourceTree = "<group>"; };
+		BA13144120FE86C80062868B /* NavigationBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBridge.m; sourceTree = "<group>"; };
+		BA13146820FE87E70062868B /* ReactNativeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeHelper.h; sourceTree = "<group>"; };
+		BA13146920FE87E70062868B /* ReactNativeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeHelper.m; sourceTree = "<group>"; };
+		BA13146B20FE885E0062868B /* ReactNativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeViewController.h; sourceTree = "<group>"; };
+		BA13146C20FE885E0062868B /* ReactNativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +494,12 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				BA13144020FE86C80062868B /* NavigationBridge.h */,
+				BA13144120FE86C80062868B /* NavigationBridge.m */,
+				BA13146B20FE885E0062868B /* ReactNativeViewController.h */,
+				BA13146C20FE885E0062868B /* ReactNativeViewController.m */,
+				BA13146820FE87E70062868B /* ReactNativeHelper.h */,
+				BA13146920FE87E70062868B /* ReactNativeHelper.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -1114,8 +1129,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA13146A20FE87E70062868B /* ReactNativeHelper.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				BA13146D20FE885E0062868B /* ReactNativeViewController.m in Sources */,
+				BA13144220FE86C80062868B /* NavigationBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
