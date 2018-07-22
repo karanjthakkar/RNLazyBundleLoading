@@ -41,6 +41,9 @@
 		BA13144220FE86C80062868B /* NavigationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13144120FE86C80062868B /* NavigationBridge.m */; };
 		BA13146A20FE87E70062868B /* ReactNativeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13146920FE87E70062868B /* ReactNativeHelper.m */; };
 		BA13146D20FE885E0062868B /* ReactNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA13146C20FE885E0062868B /* ReactNativeViewController.m */; };
+		BA13147120FE96500062868B /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		BA13147320FE97170062868B /* ScreenB.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = BA13147220FE97170062868B /* ScreenB.jsbundle */; };
+		BA22D1DB20FE9C7000141AAC /* EventBusBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BA22D1DA20FE9C7000141AAC /* EventBusBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -352,6 +355,9 @@
 		BA13146920FE87E70062868B /* ReactNativeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeHelper.m; sourceTree = "<group>"; };
 		BA13146B20FE885E0062868B /* ReactNativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeViewController.h; sourceTree = "<group>"; };
 		BA13146C20FE885E0062868B /* ReactNativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeViewController.m; sourceTree = "<group>"; };
+		BA13147220FE97170062868B /* ScreenB.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ScreenB.jsbundle; sourceTree = "<group>"; };
+		BA22D1D920FE9C7000141AAC /* EventBusBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventBusBridge.h; sourceTree = "<group>"; };
+		BA22D1DA20FE9C7000141AAC /* EventBusBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventBusBridge.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,6 +497,7 @@
 		13B07FAE1A68108700A75B9A /* RNLazyBundleLoading */ = {
 			isa = PBXGroup;
 			children = (
+				BA13147220FE97170062868B /* ScreenB.jsbundle */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -499,6 +506,8 @@
 				BA13146B20FE885E0062868B /* ReactNativeViewController.h */,
 				BA13146C20FE885E0062868B /* ReactNativeViewController.m */,
 				BA13146820FE87E70062868B /* ReactNativeHelper.h */,
+				BA22D1D920FE9C7000141AAC /* EventBusBridge.h */,
+				BA22D1DA20FE9C7000141AAC /* EventBusBridge.m */,
 				BA13146920FE87E70062868B /* ReactNativeHelper.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -1063,8 +1072,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA13147120FE96500062868B /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				BA13147320FE97170062868B /* ScreenB.jsbundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,6 +1140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA22D1DB20FE9C7000141AAC /* EventBusBridge.m in Sources */,
 				BA13146A20FE87E70062868B /* ReactNativeHelper.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,

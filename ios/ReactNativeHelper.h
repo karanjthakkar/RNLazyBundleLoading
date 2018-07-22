@@ -12,10 +12,15 @@
 #import <React/RCTBridge.h>
 #import <React/RCTRootView.h>
 
+#import "EventBusBridge.h"
+
 @interface ReactNativeHelper : NSObject
 
 + (UINavigationController *)navigationController;
 + (void)createBridge;
 + (RCTRootView *)getRootViewWithModuleName:(NSString *)moduleName initialProperties:(NSDictionary *)initialProperties;
++ (void)lazyLoad:(NSString *)bundleName;
++ (EventBusBridge *)eventBus;
++ (RCTBridge *)sharedBridge;
 
 @end

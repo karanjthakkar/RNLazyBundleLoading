@@ -9,6 +9,7 @@
 #import "ReactNativeHelper.h"
 
 static RCTBridge *_sharedBridge;
+static EventBusBridge *_eventBus;
 
 @implementation ReactNativeHelper
 
@@ -20,8 +21,21 @@ static RCTBridge *_sharedBridge;
   NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
-    _sharedBridge = [[RCTBridge alloc] initWithBundleURL:jsCodeLocation moduleProvider:nil launchOptions:nil];
+    _eventBus = [EventBusBridge new];
+    _sharedBridge = [[RCTBridge alloc] initWithBundleURL:jsCodeLocation
+                                          moduleProvider:^NSArray<id<RCTBridgeModule>> *{
+                                            return @[_eventBus];
+                                          }
+                                           launchOptions:nil];
   });
+}
+
++ (EventBusBridge *)eventBus {
+  return _eventBus;
+}
+
++ (RCTBridge *)sharedBridge {
+  return _sharedBridge;
 }
 
 + (RCTRootView *)getRootViewWithModuleName:(NSString *)moduleName initialProperties:(NSDictionary *)initialProperties {
@@ -29,6 +43,12 @@ static RCTBridge *_sharedBridge;
                                                    moduleName: moduleName
                                             initialProperties: initialProperties];
   return rootView;
+}
+
++ (void)lazyLoad:(NSString *)bundleName {
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [_sharedBridge loadCustomBundle:bundleName];
+  });
 }
 
 @end

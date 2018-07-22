@@ -4,8 +4,12 @@ import {
   Text,
   NativeModules,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  AlertIOS,
+  NativeEventEmitter
 } from 'react-native';
+
+const eventEmitter = new NativeEventEmitter(NativeModules.EventBusBridge);
 
 const styles = StyleSheet.create({
   main: {
@@ -26,8 +30,26 @@ const styles = StyleSheet.create({
 });
 
 class ScreenA extends Component {
+  componentDidMount() {
+    eventEmitter.addListener('onLoadComplete', this.showAlert);
+  }
+
+  componentWillUnmount() {
+    eventEmitter.removeListener('onLoadComplete', this.showAlert);
+  }
+
+  showAlert = () => {
+    AlertIOS.alert('Screen B loaded');
+  };
+
   openScreenB = () => {
     NativeModules.NavigationBridge.push('ScreenB');
+  };
+
+  loadScreenB = () => {
+    NativeModules.EventBusBridge.sendEvent('lazyLoad', {
+      screen_name: 'ScreenB'
+    });
   };
 
   render() {
@@ -37,6 +59,11 @@ class ScreenA extends Component {
         <TouchableOpacity onPress={this.openScreenB}>
           <View style={styles.button}>
             <Text style={styles.text}>Open screen B</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={this.loadScreenB}>
+          <View style={styles.button}>
+            <Text style={styles.text}>Load screen B</Text>
           </View>
         </TouchableOpacity>
       </View>

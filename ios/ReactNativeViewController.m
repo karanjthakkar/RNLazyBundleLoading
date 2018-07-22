@@ -21,11 +21,26 @@
 
 - (instancetype)initWithScreenName:(NSString *)screeName {
   self = [super init];
-  if (self)
-  {
+  if (self) {
     _screeName = screeName;
   }
   return self;
+}
+
+- (void)onLoadComplete {
+  [ReactNativeHelper.eventBus sendEventWithName:@"onLoadComplete" body:@{}];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)viewDidLoad {
+  [ReactNativeHelper.eventBus subscribeToEvent:@"lazyLoad" block:^(NSDictionary * _Nullable data) {
+    NSString *screenName = [data valueForKey:@"screen_name"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(onLoadComplete)
+                                                 name:RCTJavaScriptDidLoadNotification
+                                               object:nil];
+    [ReactNativeHelper lazyLoad:screenName];
+  }];
 }
 
 - (void)loadView {
