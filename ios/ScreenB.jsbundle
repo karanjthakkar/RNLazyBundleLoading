@@ -1,0 +1,48 @@
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _ScreenB = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./ScreenB"));
+
+  _reactNative.AppRegistry.registerComponent('ScreenB', function () {
+    return _ScreenB.default;
+  });
+},355,[1,354],"index.js");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _react = babelHelpers.interopRequireDefault(_$$_REQUIRE(_dependencyMap[0], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
+
+  var _jsxFileName = "/Users/karanthakkar/Work/RNLazyBundleLoading/ScreenB.js";
+
+  var styles = _reactNative.StyleSheet.create({
+    main: {
+      marginTop: 100,
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  });
+
+  var ScreenB = function ScreenB() {
+    return _react.default.createElement(_reactNative.View, {
+      style: styles.main,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      }
+    }, _react.default.createElement(_reactNative.Text, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      }
+    }, "Hi I'm screen B"));
+  };
+
+  var _default = ScreenB;
+  exports.default = _default;
+},354,[37,1],"ScreenB.js");
+require(355);
